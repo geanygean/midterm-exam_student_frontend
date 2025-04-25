@@ -1,0 +1,161 @@
+:root {
+    --color-primary: #1e40af;        
+    --color-primary-hover: #1c3aa9;  
+    --color-background: #f0f4f8;     
+    --color-surface: #ffffff;        
+    --color-text: #1e293b;           
+    --color-text-light: #64748b;    
+    --color-border: #cbd5e1;         
+    --color-border-focus: rgba(30, 64, 175, 0.3);
+    --radius: 8px;                 
+    --transition-fast: 0.2s ease;  
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.5s var(--transition-fast) both;
+  }
+
+  .form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+  .form-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group > label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .form-input,
+  .form-content select {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .form-input:focus,
+  .form-content select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-border-focus);
+  }
+  
+  .form-meta {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: 0.5rem;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .btn-submit {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .btn-submit:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(30, 64, 175, 0.3);
+  }
+  
+  .btn-cancel {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .btn-cancel:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-text-light);
+    color: var(--color-primary);
+  }
+  
+  @media (max-width: 480px) {
+    .form-actions {
+      flex-direction: column;
+    }
+    .btn-submit,
+    .btn-cancel {
+      width: 100%;
+    }
+  }
+  

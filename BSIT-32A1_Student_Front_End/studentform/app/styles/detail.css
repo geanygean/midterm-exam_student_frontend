@@ -1,0 +1,78 @@
+:root {
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-foreground: #111827;
+    --color-text: #1e293b;
+    --color-text-light: #64748b;
+    --color-primary: #1e40af;
+    --color-primary-hover: #1c3aa9;
+    --color-secondary: #e2e2e4;
+    --color-accent: #fbbf24;
+    --color-danger: #dc2626;
+    --color-danger-hover: #b91c1c;
+    --color-border: #e5e7eb;
+    --radius: 8px;
+    --transition-fast: 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .student-detail-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .student-detail-container h1 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .student-detail-container p {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+  
+  .student-detail-container strong {
+    color: var(--color-foreground);
+  }
+  
+  .back-link-holder {
+    margin-top: 1.5rem;
+    text-align: right;
+  }
+  
+  .back-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+  
+  .back-link:hover {
+    color: var(--color-primary-hover);
+  }
+  
